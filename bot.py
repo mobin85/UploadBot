@@ -13,7 +13,7 @@ class Bot(Client):
             chat = msg.chat.id
             if text == "/start":
                 await self.start_command(msg)
-
+                # changed something
         self.run()
 
     async def start_command(self, msg: Message):
