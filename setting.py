@@ -1,0 +1,3 @@
+API_ID, API_HASH = 13029659, "93eb1fdf39d17e2f880c4fbfbe35d696"
+TOKEN = "6012693080:AAEjOHqAJpwg1VoW68mTTawbaE_KaQ4liEs"
+BOT_USER = "@UploaderBot_robot"
