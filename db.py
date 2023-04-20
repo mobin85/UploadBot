@@ -16,7 +16,7 @@ class BaseModel(Model):
         database = db
 
 
-class User:
+class User(BaseModel):
     user_id = CharField()
     traffic = FloatField(default=1000.0)  # (MEGABYTE) 1000MG = 1G
     coin = IntegerField(default=0)
@@ -24,7 +24,7 @@ class User:
     account_type = CharField(default=UserConfig.NORMAL)
     download_files = IntegerField(default=0)
     generated_links = IntegerField(default=0)
-    file_limit_size = FloatField()
+    file_limit_size = IntegerField(default=512)  # 512MG
 
 
 db.connect()
