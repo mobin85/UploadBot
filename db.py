@@ -1,3 +1,5 @@
+from datetime import timedelta, datetime
+
 from peewee import (SqliteDatabase, CharField,
                     Model, FloatField,
                     DateTimeField, IntegerField)
@@ -27,7 +29,15 @@ class User(BaseModel):
     file_limit_size = IntegerField(default=512)  # 512MG
 
 
+class Links(BaseModel):
+    user_id = CharField()
+    filename = CharField()
+    filesize = CharField()
+    file_link = CharField()
+    link_lifetime = DateTimeField()
+
+
 db.connect()
 
 if __name__ == '__main__':
-    db.create_tables([User, ])
+    db.create_tables([User, Links])
