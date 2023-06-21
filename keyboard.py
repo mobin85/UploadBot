@@ -1,6 +1,16 @@
-from pyrogram.types import ReplyKeyboardMarkup
+from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+start = ReplyKeyboardMarkup([
+    [KeyboardButton("ارسال شماره", request_contact=True)]
+])
 start_keyboard = ReplyKeyboardMarkup([
-    ["حساب کاربری 👤"],
-    ["آپلود فایل 📥", "لینک های تولید شده 📎"]
+    ["👤حساب کاربری"],
+    ["📎لینک های تولید شده"],
+    ["💰خرید ترافیک", '👥دعوت از دوستان'],
+    ["⚠قوانین", "❓راهنما"],
+], resize_keyboard=True)
+
+admin_keyboard = ReplyKeyboardMarkup([
+    ['تغییر رمز عبور', 'شارژ حساب', 'لیست کاربران'],
+    ['بازگشت']
 ], resize_keyboard=True)

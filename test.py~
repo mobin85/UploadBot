@@ -1,0 +1,9 @@
+print("Hello, World!")
+
+
+
+class Main:
+    def __init__(self):
+        self.name = "mobin"
+        self.lastName = "sahami"
+
