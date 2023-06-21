@@ -1,9 +1,7 @@
 import asyncio
 import os
-import socket
 import sys
 import traceback
-from contextlib import suppress
 from datetime import datetime, timedelta
 import colorama
 import aiofiles
@@ -21,7 +19,7 @@ import filetype
 from db import User, Links, Payments, AdminPassword
 from key import KEY
 from keyboard import *
-from setting import *
+from dotenv import load_dotenv
 import re
 from ftplib import FTP
 
@@ -29,6 +27,9 @@ from telethon import TelegramClient, events
 from telethon.sync import Message as TMessage
 
 print(f"{colorama.Fore.RED}PID: {os.getpid()}{colorama.Fore.RESET}")
+load_dotenv()
+API_ID, API_HASH = int(os.getenv("API_ID")), os.getenv("API_HASH")
+TOKEN = os.getenv("TOKEN")
 
 cipher = Fernet(KEY)
 GIFT_TRAFFIC = 2000
@@ -135,7 +136,7 @@ class Bot(Client):
 
                                     , reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("📥تولید لینک دانلود",
-        callback_data=f"{user_id}/{(file_name)[len(file_name) - 20:] if len(file_name) > 20 else file_name}/{thing.file_size / 1024 / 1024:.2f}"),
+                                          callback_data=f"{user_id}/{(file_name)[len(file_name) - 20:] if len(file_name) > 20 else file_name}/{thing.file_size / 1024 / 1024:.2f}"),
                      InlineKeyboardButton("✏️تغییر نام فایل",
                                           callback_data="changeName")]
                 ]), reply_to_message_id=m.id)
