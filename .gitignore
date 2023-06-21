@@ -1,4 +1,5 @@
-#setting.py
+setting.py
+__pycache__
 .idea
 bot.session
 zarinpal.py
