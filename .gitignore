@@ -7,3 +7,4 @@ downloads
 s.py
 test
 app.py
+.env
